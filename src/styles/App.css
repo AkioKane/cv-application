@@ -1,0 +1,47 @@
+:root {
+  --component-color: #262626;
+  --component-background: #171717;
+}
+
+.app {
+  display: flex;
+  gap: 20%;
+  width: 90vw;
+  height: 80vh;
+  font-family: sans-serif;
+}
+
+.sidebar,
+.resume {
+  display: flex;
+  width: 40%;
+  height: 95%;
+  border-radius: 10px;
+  background-color: var(--component-background);
+  border: 1px solid var(--component-color);
+  color: white;
+}
+
+.sidebar label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.sidebar input {
+  margin-top: 0.5em;
+  background-color: #404040;
+  border: none;
+  border-radius: 8px;
+  height: 30px;
+  padding: 5px;
+  color: white;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}

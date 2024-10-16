@@ -5,7 +5,7 @@
 
 .app {
   display: flex;
-  gap: 20%;
+  gap: 10%;
   width: 90vw;
   height: 80vh;
   font-family: sans-serif;
@@ -44,4 +44,15 @@ form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  .resume {
+    width: 100%;
+  }
 }

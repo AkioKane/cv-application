@@ -1,8 +1,10 @@
 const data = {
   fullName: "John Smith",
+  job: "Fullstack Web Programmer",
   email: "example.not.avaliable.@gmail.com",
   phoneNumber: "+7 923 456 78 90",
-  address: "Moscow, Russia"
+  address: "Moscow, Russia",
+  summary: "I middle full-stack developer, I love JS and React."
 }
 
 export { data }

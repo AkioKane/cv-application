@@ -1,0 +1,43 @@
+.sidebar label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.sidebar input, textarea {
+  margin-top: 0.5em;
+  background-color: #262626;
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  padding: 10px;
+  color: white;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+}
+
+.full-row {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+textarea {
+  resize: none;
+  min-width: 100%;
+  min-height: 100%;
+  grid-row-start: 4;
+  grid-row-end: 7;
+}
+
+.textarea-row {
+  height: 200%;
+}

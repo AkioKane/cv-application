@@ -8,11 +8,12 @@ function App() {
   return (
     <>
       <div className="app">
-        <div className="sidebar">
-          <Form />
+        <div className="app-sidebar">
+          <h1>Personal Details</h1>
+          <div className="sidebar">
+            <Form />
+          </div>
         </div>
-        
-        <div className="resume"></div>
       </div>
     </>
   )

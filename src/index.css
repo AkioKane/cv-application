@@ -11,6 +11,8 @@
 
 body {
   background-color: #171717;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {

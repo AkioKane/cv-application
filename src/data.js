@@ -7,4 +7,13 @@ const data = {
   summary: "I middle full-stack developer, I love JS and React."
 }
 
-export { data }
+const dataPerson = {
+  fullName: "",
+  job: "",
+  email: "",
+  phoneNumber: "",
+  address: "",
+  summary: ""
+}
+
+export { data, dataPerson}

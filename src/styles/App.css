@@ -42,7 +42,7 @@
   background-size: 200% 100%;
   margin-top: 1em;
   transition: all 0.3s ease-in-out;
-  animation: gradient 1.5s ease-in-out forwards;
+  animation: gradient 2.5s ease-in-out forwards;
   animation-delay: 0.25s;
 }
 

@@ -5,8 +5,8 @@ function Sidebar({ activeComponent }) {
     switch (activeComponent) {
       case 'personalDetails':
         return <FormPersonalDetails />
-      // case "another":
-      //   return <h1>Hello world</h1>
+      case "education":
+        return <h1>Hello world</h1>
       default:
         return <FormPersonalDetails />
     }

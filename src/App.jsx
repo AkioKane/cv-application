@@ -14,6 +14,8 @@ function App() {
             <ButtonsMenuSelector setActiveComponent={setActiveComponent} />
           </div>
         </nav>
+
+        <hr />
         
         <div className="app-sidebar">
           <h1>Personal Details</h1>

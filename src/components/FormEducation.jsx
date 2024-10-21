@@ -9,3 +9,5 @@ function FormEducation() {
     </>
   )
 }
+
+export default FormEducation

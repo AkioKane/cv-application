@@ -11,7 +11,9 @@ function App() {
       <div className="app">
         <nav>
           <div className="menu-buttons">
-            <ButtonsMenuSelector setActiveComponent={setActiveComponent} />
+            <ButtonsMenuSelector 
+              setActiveComponent={setActiveComponent} 
+            />
           </div>
         </nav>
 
@@ -19,7 +21,10 @@ function App() {
         
         <div className="app-sidebar">
           <h1>Personal Details</h1>
-          <Sidebar activeComponent={activeComponent}/>
+          <Sidebar 
+            activeComponent={activeComponent} 
+            setActiveComponent={setActiveComponent} 
+          />
         </div>
       </div>
     </>

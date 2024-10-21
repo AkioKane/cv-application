@@ -73,16 +73,22 @@ function FormPersonalDetails() {
         <label className="full-row textarea-row">Summary:
           <textarea
             placeholder={data.summary}
+            value={summary}
             onChange={e =>
               setSumamry(e.target.value)
             }
           />
         </label>
         
-        <div className="sumbit-container">
-          <button className="send-button">Next &#10132;</button>
-        </div>
       </form>
+      <div className="sumbit-container">
+        <button 
+          className="send-button"
+          // onClick={e => {
+          //   console.log(fullName)
+          // }}
+        >Next &#10132;</button>
+      </div>
     </>
   )
 }

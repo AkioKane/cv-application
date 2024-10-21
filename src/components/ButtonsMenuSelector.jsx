@@ -48,17 +48,15 @@ function ButtonsMenuSelector({ setActiveComponent }) {
       <div className="group-btns-details">
         <button 
           id="personal" 
-          className="menu-btns"
+          className={`menu-btns ${activeButton === "personalDetails" ? "selected-button-menu" : ""}`}
           onClick={() => handleButtonClick("personalDetails")}
-          style={{backgroundColor: activeButton === "personalDetails" ? "#e5e5e5" : "initial"}}
         >
           {replaceImgButton("personalDetails")}
         </button>
         <button 
           id="education" 
-          className="menu-btns"
+          className={`menu-btns ${activeButton === "education" ? "selected-button-menu" : ""}`}
           onClick={() => handleButtonClick("education")}
-          style={{backgroundColor: activeButton === "education" ? "#e5e5e5" : "initial"}}
         >
           {replaceImgButton("education")}
         </button>

@@ -41,3 +41,7 @@ nav {
     transform: translateY(0px) rotate(0px) scale(1.1);
   }
 }
+
+.selected-button-menu {
+  background-color: #e5e5e5 !important;
+}

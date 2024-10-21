@@ -19,7 +19,7 @@ nav {
 }
 
 .menu-buttons button {
-  background-color: var(--btn-color);
+  background-color: inherit;
   border: none;
   border-radius: 5px;
   margin: 10px;

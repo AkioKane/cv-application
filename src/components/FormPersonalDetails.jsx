@@ -2,13 +2,31 @@ import { useState } from "react";
 import { dataPerson, data } from "../data";
 import "../styles/FormPersonalDetails.css"
 
-function FormPersonalDetails() {
+function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPersonInfo}) {
   const [fullName, setFullName] = useState(dataPerson.fullName)
   const [address, setAddress] = useState(dataPerson.address)
   const [job, setJob] = useState(dataPerson.job)
   const [mail, setMail] = useState(dataPerson.email)
   const [phone, setPhone] = useState(dataPerson.phoneNumber)
   const [summary, setSumamry] = useState(dataPerson.summary)
+
+  const handleButtonClick = (component) => {
+    setActiveComponent(component)
+    setActiveButtonMenu(component)
+  }
+
+  const saveForm = () => {
+    const dataPersonInfo = {
+      fullName: fullName,
+      address: address,
+      job: job,
+      mail: mail,
+      phone: phone,
+      summary: summary
+    }
+    
+    return setPersonInfo(dataPersonInfo);
+  }
 
   return (
     <>
@@ -84,9 +102,10 @@ function FormPersonalDetails() {
       <div className="sumbit-container">
         <button 
           className="send-button"
-          // onClick={e => {
-          //   console.log(fullName)
-          // }}
+          onClick={e => {
+            handleButtonClick("education");
+            saveForm();
+          }}
         >Next &#10132;</button>
       </div>
     </>

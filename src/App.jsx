@@ -5,6 +5,7 @@ import "./styles/App.css"
 
 function App() {
   const [activeComponent, setActiveComponent] = useState(null)
+  const [activeButtonMenu, setActiveButtonMenu] = useState("personalDetails")
 
   return (
     <>
@@ -12,6 +13,8 @@ function App() {
         <nav>
           <div className="menu-buttons">
             <ButtonsMenuSelector 
+              activeButtonMenu={activeButtonMenu}
+              setActiveButtonMenu={setActiveButtonMenu}
               setActiveComponent={setActiveComponent} 
             />
           </div>
@@ -24,6 +27,7 @@ function App() {
           <Sidebar 
             activeComponent={activeComponent} 
             setActiveComponent={setActiveComponent} 
+            setActiveButtonMenu={setActiveButtonMenu}
           />
         </div>
       </div>

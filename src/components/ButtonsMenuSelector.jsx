@@ -5,12 +5,10 @@ import education from "../assets/education.svg";
 import educationWhite from "../assets/educationWhite.svg";
 import "../styles/ButtonsMenuSelector.css";
 
-function ButtonsMenuSelector({ setActiveComponent }) {
-  const [activeButton, setActiveButton] = useState("personalDetails")
-
+function ButtonsMenuSelector({ activeButtonMenu, setActiveButtonMenu, setActiveComponent }) {
   const handleButtonClick = (component) => {
     setActiveComponent(component);
-    setActiveButton(component);
+    setActiveButtonMenu(component);
   };
 
   const replaceImgButton = (component) => {
@@ -28,7 +26,7 @@ function ButtonsMenuSelector({ setActiveComponent }) {
         break;
     }
 
-    if (activeButton === component) {
+    if (activeButtonMenu === component) {
       return (
         <>
           <img src={whiteImg} alt={component === "personalDetails" ? "person" : component} />
@@ -48,14 +46,14 @@ function ButtonsMenuSelector({ setActiveComponent }) {
       <div className="group-btns-details">
         <button 
           id="personal" 
-          className={`menu-btns ${activeButton === "personalDetails" ? "selected-button-menu" : ""}`}
+          className={`menu-btns ${activeButtonMenu === "personalDetails" ? "selected-button-menu" : ""}`}
           onClick={() => handleButtonClick("personalDetails")}
         >
           {replaceImgButton("personalDetails")}
         </button>
         <button 
           id="education" 
-          className={`menu-btns ${activeButton === "education" ? "selected-button-menu" : ""}`}
+          className={`menu-btns ${activeButtonMenu === "education" ? "selected-button-menu" : ""}`}
           onClick={() => handleButtonClick("education")}
         >
           {replaceImgButton("education")}

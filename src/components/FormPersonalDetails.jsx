@@ -2,7 +2,7 @@ import { useState } from "react";
 import { dataPerson, data } from "../data";
 import "../styles/FormPersonalDetails.css"
 
-function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPersonInfo}) {
+function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPersonInfo, setNameTag}) {
   const [fullName, setFullName] = useState(dataPerson.fullName)
   const [address, setAddress] = useState(dataPerson.address)
   const [job, setJob] = useState(dataPerson.job)
@@ -13,6 +13,12 @@ function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPerso
   const handleButtonClick = (component) => {
     setActiveComponent(component)
     setActiveButtonMenu(component)
+    
+    if (component === "personalDetails") {
+      setNameTag("Personal Details")
+    } else if (component === "education") {
+      setNameTag("Education")
+    }
   }
 
   const saveForm = () => {

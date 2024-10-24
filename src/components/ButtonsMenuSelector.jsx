@@ -1,14 +1,19 @@
-import { useState } from "react";
 import person from "../assets/person.svg";
 import personWhite from "../assets/personWhite.svg";
 import education from "../assets/education.svg";
 import educationWhite from "../assets/educationWhite.svg";
 import "../styles/ButtonsMenuSelector.css";
 
-function ButtonsMenuSelector({ activeButtonMenu, setActiveButtonMenu, setActiveComponent }) {
+function ButtonsMenuSelector({ activeButtonMenu, setActiveButtonMenu, setActiveComponent, setNameTag }) {
   const handleButtonClick = (component) => {
     setActiveComponent(component);
     setActiveButtonMenu(component);
+
+    if (component === "personalDetails") {
+      setNameTag("Personal Details")
+    } else if (component === "education") {
+      setNameTag("Education")
+    }
   };
 
   const replaceImgButton = (component) => {

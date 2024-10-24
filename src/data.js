@@ -16,4 +16,4 @@ const dataPerson = {
   summary: ""
 }
 
-export { data, dataPerson}
+export { data, dataPerson }

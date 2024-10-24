@@ -5,7 +5,12 @@ import "../styles/FormEducation.css"
 function FormEducation() {
   return (
     <>
-      <h1>Hello world!</h1>
+      <div className="head">
+        <h1>Degree</h1>
+        <button id="add-degree">+</button>
+      </div>
+      <div className="form-education"></div>
+      <div className="points"></div>
     </>
   )
 }

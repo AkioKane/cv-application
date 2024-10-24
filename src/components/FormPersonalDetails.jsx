@@ -9,6 +9,7 @@ function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPerso
   const [mail, setMail] = useState(dataPerson.email)
   const [phone, setPhone] = useState(dataPerson.phoneNumber)
   const [summary, setSumamry] = useState(dataPerson.summary)
+  const [clickedSendButton, setClickedSendButton] = useState(false)
 
   const handleButtonClick = (component) => {
     setActiveComponent(component)
@@ -107,10 +108,13 @@ function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPerso
       </form>
       <div className="sumbit-container">
         <button 
-          className="send-button"
+          className={`send-button ${clickedSendButton ? "clicked" : ""}`}
           onClick={e => {
-            handleButtonClick("education");
-            saveForm();
+            setClickedSendButton(true)
+            setTimeout(() => {
+              handleButtonClick("education");
+              saveForm();
+            }, 2000)
           }}
         >Next &#10132;</button>
       </div>

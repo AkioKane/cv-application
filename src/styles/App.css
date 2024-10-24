@@ -6,8 +6,6 @@
 .app {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
   height: 100vh;
   font-family: "RobotoCustom";
@@ -45,6 +43,7 @@
   transition: all 0.3s ease-in-out;
   animation: gradient 2.5s ease-in-out forwards;
   animation-delay: 0.25s;
+  margin-bottom: 4em;
 }
 
 @keyframes gradient {
@@ -71,10 +70,5 @@
 
   hr {
     margin-bottom: 2em;
-  }
-
-  .menu-buttons button {
-    margin: 20px;
-    margin-top: 2em;
   }
 }

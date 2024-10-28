@@ -2,19 +2,23 @@ import person from "../assets/person.svg";
 import personWhite from "../assets/personWhite.svg";
 import education from "../assets/education.svg";
 import educationWhite from "../assets/educationWhite.svg";
+import experience from "../assets/experience.svg";
+import experienceWhite from "../assets/experienceWhite.svg";
 import "../styles/ButtonsMenuSelector.css";
 
 function ButtonsMenuSelector({ activeButtonMenu, setActiveButtonMenu, setActiveComponent, setNameTag }) {
   const handleButtonClick = (component) => {
-    setActiveComponent(component);
-    setActiveButtonMenu(component);
-
+    setActiveComponent(component)
+    setActiveButtonMenu(component)
+    
     if (component === "personalDetails") {
       setNameTag("Personal Details")
     } else if (component === "education") {
       setNameTag("Education")
+    } else if (component === "experience") {
+      setNameTag("Experience")
     }
-  };
+  }
 
   const replaceImgButton = (component) => {
     let blackImg = "";
@@ -29,6 +33,9 @@ function ButtonsMenuSelector({ activeButtonMenu, setActiveButtonMenu, setActiveC
         blackImg = education;
         whiteImg = educationWhite;
         break;
+      case "experience":
+        blackImg = experience;
+        whiteImg = experienceWhite;
     }
 
     if (activeButtonMenu === component) {
@@ -62,6 +69,13 @@ function ButtonsMenuSelector({ activeButtonMenu, setActiveButtonMenu, setActiveC
           onClick={() => handleButtonClick("education")}
         >
           {replaceImgButton("education")}
+        </button>
+        <button 
+          id="experience" 
+          className={`menu-btns ${activeButtonMenu === "experience" ? "selected-button-menu" : ""}`}
+          onClick={() => handleButtonClick("experience")}
+        >
+          {replaceImgButton("experience")}
         </button>
       </div>
     </>

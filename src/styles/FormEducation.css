@@ -12,3 +12,7 @@
   margin-right: 2em;
   font-weight: 400;
 }
+
+.sidebar .form-education label {
+  margin-bottom: 2em;
+}

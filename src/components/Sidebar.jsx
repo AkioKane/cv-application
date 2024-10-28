@@ -4,6 +4,7 @@ import FormEducation from "./FormEducation"
 
 function Sidebar({ activeComponent, setActiveComponent, setActiveButtonMenu, setNameTag }) {
   const [personInfo, setPersonInfo] = useState(null)
+  const [educationInfo, setEducationInfo] = useState(null)
 
   const renderComponent = () => {
     switch (activeComponent) {
@@ -14,8 +15,18 @@ function Sidebar({ activeComponent, setActiveComponent, setActiveButtonMenu, set
           setPersonInfo={setPersonInfo}
           setNameTag={setNameTag}
         />)
+      
       case "education":
-        return <FormEducation />
+        return <FormEducation 
+          setActiveComponent={setActiveComponent} 
+          setActiveButtonMenu={setActiveButtonMenu} 
+          setEducationInfo={setEducationInfo}
+          setNameTag={setNameTag}
+        />
+      
+      case "experience":
+        return;
+      
       default:
         return (<FormPersonalDetails 
           setActiveComponent={setActiveComponent} 

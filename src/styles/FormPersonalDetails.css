@@ -1,9 +1,12 @@
 .sidebar label {
   display: flex;
   flex-direction: column;
-  margin-top: 2em;
   margin-left: 2em;
   margin-right: 2em;
+}
+
+.sidebar form label {
+  margin-top: 2em;
 }
 
 .sidebar input, textarea {
@@ -24,7 +27,7 @@ form {
   width: 100%;
 }
 
-form .personal-info {
+.personal-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;

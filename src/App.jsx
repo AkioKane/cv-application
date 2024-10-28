@@ -2,7 +2,7 @@ import ButtonsMenuSelector from './components/ButtonsMenuSelector'
 import Sidebar from './components/Sidebar'
 import NameTag from './components/NameTag'
 import { useState } from "react"
-import "./styles/App.css"
+import "./App.css"
 
 function App() {
   const [activeComponent, setActiveComponent] = useState(null)

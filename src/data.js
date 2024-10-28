@@ -16,4 +16,11 @@ const dataPerson = {
   summary: ""
 }
 
-export { data, dataPerson }
+const dataEducation = {
+  name: "Name University",
+  degree: "Degree(e.g.,BS), Majors(e.g., Computer Science)",
+  graduation: "Graduation Month, Year",
+  address: "City, Country"
+}
+
+export { data, dataPerson, dataEducation }

@@ -19,6 +19,8 @@ function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPerso
       setNameTag("Personal Details")
     } else if (component === "education") {
       setNameTag("Education")
+    } else if (component === "experience") {
+      setNameTag("Experience")
     }
   }
 
@@ -39,7 +41,7 @@ function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPerso
     <>
       <form>
         <div className="personal-info">
-          <label>Full Name:
+          <label>Full Name
             <input 
               type="text"
               placeholder={data.fullName}
@@ -50,7 +52,7 @@ function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPerso
             />
           </label>
 
-          <label>Job:
+          <label>Job
             <input 
               type="text"
               placeholder={data.job}
@@ -61,7 +63,7 @@ function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPerso
             />
           </label>
 
-          <label>Phone:
+          <label>Phone
             <input 
               type="text"
               placeholder={data.phoneNumber}
@@ -72,7 +74,7 @@ function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPerso
             />
           </label>
 
-          <label>Email: 
+          <label>Email
             <input 
               type="text"
               placeholder={data.email}
@@ -84,7 +86,7 @@ function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPerso
           </label>
         </div>
 
-        <label className="full-row">Address:
+        <label className="full-row">Address
           <input 
             type="text"
             placeholder={data.address}
@@ -95,7 +97,7 @@ function FormPersonalDetails({ setActiveButtonMenu, setActiveComponent, setPerso
           />
         </label>
 
-        <label className="full-row textarea-row">Summary:
+        <label className="full-row textarea-row">Summary
           <textarea
             placeholder={data.summary}
             value={summary}

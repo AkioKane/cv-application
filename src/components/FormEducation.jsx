@@ -103,8 +103,6 @@ function FormEducation({ setActiveButtonMenu, setActiveComponent, setEducationIn
         
       </div>
 
-      <div className="points"></div>
-
       <div className="sumbit-container">
         <button 
           className={`send-button ${clickedSendButton ? "clicked" : ""}`}

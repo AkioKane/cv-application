@@ -2,12 +2,16 @@ import { useState } from "react";
 import { dataEducation } from "../data";
 import "../styles/FormEducation.css"
 
+const localStorage = []
+
 function FormEducation({ setActiveButtonMenu, setActiveComponent, setEducationInfo, setNameTag}) {
+
   const [univerName, setUniverName] = useState("")
   const [degree, setDegree] = useState("")
   const [graduation, setGraduation] = useState("")
   const [address, setAddress] = useState("")
 
+  const [intDegree, setIntDegree] = useState(1)
   const [clickedSendButton, setClickedSendButton] = useState(false)
 
   const handleButtonClick = (component) => {
@@ -23,17 +27,38 @@ function FormEducation({ setActiveButtonMenu, setActiveComponent, setEducationIn
     }
   }
 
+  const clearForm = () => {
+    setUniverName("")
+    setDegree("")
+    setGraduation("")
+    setAddress("")
+  }
+
+  const saveForm = () => {
+    clearForm()
+    const dataEducationInfo = {
+      univerName: univerName,
+      degree: degree,
+      graduation: graduation,
+      address: address
+    }
+
+    return localStorage.push(dataEducationInfo);
+  }
+
   return (
     <>
       <div className="head">
-        <h1>Degree 1</h1>
+        <h1>Degree {intDegree}</h1>
         <button 
           id="add-degree"
           onClick={(e) => {
-            return;
+            saveForm()
+            setIntDegree(intDegree+1)
           }}
         >+</button>
       </div>
+
       <div className="form-education personal-info">
         <label>University Name
           <input 
@@ -51,7 +76,7 @@ function FormEducation({ setActiveButtonMenu, setActiveComponent, setEducationIn
             placeholder={dataEducation.degree}
             value={degree}
             onChange={e => 
-              setUniverName(e.target.value)
+              setDegree(e.target.value)
             }
           />
         </label>
@@ -61,7 +86,7 @@ function FormEducation({ setActiveButtonMenu, setActiveComponent, setEducationIn
             placeholder={dataEducation.graduation}
             value={graduation}
             onChange={e => 
-              setUniverName(e.target.value)
+              setGraduation(e.target.value)
             }
           />
         </label>
@@ -71,21 +96,24 @@ function FormEducation({ setActiveButtonMenu, setActiveComponent, setEducationIn
             placeholder={dataEducation.address}
             value={address}
             onChange={e => 
-              setUniverName(e.target.value)
+              setAddress(e.target.value)
             }
           />
         </label>
         
       </div>
+
       <div className="points"></div>
+
       <div className="sumbit-container">
         <button 
           className={`send-button ${clickedSendButton ? "clicked" : ""}`}
           onClick={e => {
-            setClickedSendButton(true)
+            saveForm();
+            setEducationInfo(localStorage);
+            setClickedSendButton(true);
             setTimeout(() => {
               handleButtonClick("experience");
-              // saveForm();
             }, 2000)
           }}
         >Next &#10132;</button>

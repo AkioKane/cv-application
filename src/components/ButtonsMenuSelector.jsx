@@ -1,13 +1,27 @@
+import { useState } from "react";
 import person from "../assets/person.svg";
 import personWhite from "../assets/personWhite.svg";
 import education from "../assets/education.svg";
 import educationWhite from "../assets/educationWhite.svg";
 import experience from "../assets/experience.svg";
 import experienceWhite from "../assets/experienceWhite.svg";
+import preview from "../assets/preview.svg";
+import previewWhite from "../assets/previewWhite.svg";
+import previewOff from "../assets/previewOff.svg";
+import previewOffWhite from "../assets/previewOffWhite.svg";
 import "../styles/ButtonsMenuSelector.css";
 
-function ButtonsMenuSelector({ activeButtonMenu, setActiveButtonMenu, setActiveComponent, setNameTag }) {
+function ButtonsMenuSelector({ activeButtonMenu, setActiveButtonMenu, setActiveComponent, setNameTag, setLivePreviewVisible, livePreviewVisible }) {
+  const [indexClickLivePreview, setIndexClickLivePreview] = useState(0)
+
   const handleButtonClick = (component) => {
+    if (component === "livePreview") {
+      if (livePreviewVisible === true) {
+        return setLivePreviewVisible(false)
+      }
+      return setLivePreviewVisible(true)
+    }
+
     setActiveComponent(component)
     setActiveButtonMenu(component)
     
@@ -36,6 +50,15 @@ function ButtonsMenuSelector({ activeButtonMenu, setActiveButtonMenu, setActiveC
       case "experience":
         blackImg = experience;
         whiteImg = experienceWhite;
+        break;
+      case "livePreview":
+        blackImg = preview;
+        whiteImg = previewWhite;
+        if (indexClickLivePreview % 2 !== 0) {
+          blackImg = previewOff;
+          whiteImg = previewOffWhite;
+        }
+        break;
     }
 
     if (activeButtonMenu === component) {
@@ -76,6 +99,16 @@ function ButtonsMenuSelector({ activeButtonMenu, setActiveButtonMenu, setActiveC
           onClick={() => handleButtonClick("experience")}
         >
           {replaceImgButton("experience")}
+        </button>
+        <button 
+          id="live-preview" 
+          className={`menu-btns ${activeButtonMenu === "livePreview" ? "selected-button-menu" : ""}`}
+          onClick={(e) => {
+            handleButtonClick("livePreview")
+            setIndexClickLivePreview(indexClickLivePreview + 1)
+          }}
+        >
+          {replaceImgButton("livePreview")}
         </button>
       </div>
     </>

@@ -110,10 +110,10 @@ function FormExperience({ setActiveButtonMenu, setActiveComponent, setExperience
             setExperienceInfo(localStorage);
             setClickedSendButton(true);
             setTimeout(() => {
-              handleButtonClick("experience");
-            }, 2000)
+              setClickedSendButton(false);
+            }, 2200)
           }}
-        >Next &#10132;</button>
+        >Sumbit</button>
       </div>
     </>
   );

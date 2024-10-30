@@ -3,7 +3,7 @@ import FormPersonalDetails from "./FormPersonalDetails"
 import FormEducation from "./FormEducation"
 import FormExperience from "./FormExperience"
 
-function Sidebar({ activeComponent, setActiveComponent, setActiveButtonMenu, setNameTag }) {
+function Sidebar({ activeComponent, setActiveComponent, setActiveButtonMenu, setNameTag, livePreviewVisible }) {
   const [personInfo, setPersonInfo] = useState(null)
   const [educationInfo, setEducationInfo] = useState(null)
   const [experienceInfo, setExperienceInfo] = useState(null)

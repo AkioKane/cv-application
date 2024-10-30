@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { dataEducation } from "../data";
-import "../styles/FormEducation.css"
+import { dataExperience } from "../data";
+import "../styles/FormExperience.css"
 
 const localStorage = []
 
-function FormEducation({ setActiveButtonMenu, setActiveComponent, setEducationInfo, setNameTag}) {
-  const [univerName, setUniverName] = useState("")
-  const [degree, setDegree] = useState("")
-  const [graduation, setGraduation] = useState("")
+function FormExperience({ setActiveButtonMenu, setActiveComponent, setExperienceInfo, setNameTag}) {
+  const [companyName, setCompanyName] = useState("")
+  const [title, setTitle] = useState("")
+  const [duration, setDuration] = useState("")
   const [address, setAddress] = useState("")
 
-  const [intDegree, setIntDegree] = useState(1)
+  const [intJob, setIntJob] = useState(1)
   const [clickedSendButton, setClickedSendButton] = useState(false)
 
   const handleButtonClick = (component) => {
@@ -27,72 +27,72 @@ function FormEducation({ setActiveButtonMenu, setActiveComponent, setEducationIn
   }
 
   const clearForm = () => {
-    setUniverName("")
-    setDegree("")
-    setGraduation("")
+    setCompanyName("")
+    setTitle("")
+    setDuration("")
     setAddress("")
   }
 
   const saveForm = () => {
     clearForm()
-    const dataEducationInfo = {
-      univerName: univerName,
-      degree: degree,
-      graduation: graduation,
+    const dataExperienceInfo = {
+      companyName: companyName,
+      title: title,
+      duration: duration,
       address: address
     }
 
-    return localStorage.push(dataEducationInfo);
+    return localStorage.push(dataExperienceInfo);
   }
 
   return (
     <>
       <div className="head">
-        <h1>Degree {intDegree}</h1>
+        <h1>Job {intJob}</h1>
         <button 
-          id="add-degree"
+          id="add-job"
           onClick={(e) => {
             saveForm()
-            setIntDegree(intDegree+1)
+            setIntJob(intJob+1)
           }}
         >+</button>
       </div>
 
-      <div className="form-education personal-info">
-        <label>University Name
+      <div className="form-experience personal-info">
+        <label>Company Name
           <input 
             type="text"
-            placeholder={dataEducation.name}
-            value={univerName}
+            placeholder={dataExperience.name}
+            value={companyName}
             onChange={e => 
-              setUniverName(e.target.value)
+              setCompanyName(e.target.value)
             }
           />
         </label>
-        <label>Degree
+        <label>Job Title
           <input 
             type="text"
-            placeholder={dataEducation.degree}
-            value={degree}
+            placeholder={dataExperience.title}
+            value={title}
             onChange={e => 
-              setDegree(e.target.value)
+              setTitle(e.target.value)
             }
           />
         </label>
-        <label>Graduation
+        <label>Duration
           <input 
             type="text"
-            placeholder={dataEducation.graduation}
-            value={graduation}
+            placeholder={dataExperience.duration}
+            value={duration}
             onChange={e => 
-              setGraduation(e.target.value)
+              setDuration(e.target.value)
             }
           />
         </label>
         <label>Address
           <input 
             type="text"
-            placeholder={dataEducation.address}
+            placeholder={dataExperience.address}
             value={address}
             onChange={e => 
               setAddress(e.target.value)
@@ -107,7 +107,7 @@ function FormEducation({ setActiveButtonMenu, setActiveComponent, setEducationIn
           className={`send-button ${clickedSendButton ? "clicked" : ""}`}
           onClick={e => {
             saveForm();
-            setEducationInfo(localStorage);
+            setExperienceInfo(localStorage);
             setClickedSendButton(true);
             setTimeout(() => {
               handleButtonClick("experience");
@@ -119,4 +119,4 @@ function FormEducation({ setActiveButtonMenu, setActiveComponent, setEducationIn
   );
 }
 
-export default FormEducation
+export default FormExperience

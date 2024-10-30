@@ -1,0 +1,20 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+#add-job {
+  padding: 8px 15px 8px 15px;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  margin-right: 2em;
+  font-weight: 400;
+}
+
+.sidebar .form-experience label {
+  margin-bottom: 2em;
+}

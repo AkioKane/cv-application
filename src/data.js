@@ -23,4 +23,11 @@ const dataEducation = {
   address: "City, Country"
 }
 
-export { data, dataPerson, dataEducation }
+const dataExperience = {
+  name: "CryoSpace Company",
+  title: "Software Engineer",
+  duration: "Oct. 2022 - Present(Month Year - Month Year/Present)",
+  address: "Space Sky, MV(City, Country)"
+}
+
+export { data, dataPerson, dataEducation, dataExperience }

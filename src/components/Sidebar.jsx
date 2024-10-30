@@ -1,10 +1,12 @@
 import { useState } from "react"
 import FormPersonalDetails from "./FormPersonalDetails"
 import FormEducation from "./FormEducation"
+import FormExperience from "./FormExperience"
 
 function Sidebar({ activeComponent, setActiveComponent, setActiveButtonMenu, setNameTag }) {
   const [personInfo, setPersonInfo] = useState(null)
   const [educationInfo, setEducationInfo] = useState(null)
+  const [experienceInfo, setExperienceInfo] = useState(null)
 
   const renderComponent = () => {
     switch (activeComponent) {
@@ -25,7 +27,12 @@ function Sidebar({ activeComponent, setActiveComponent, setActiveButtonMenu, set
         />
       
       case "experience":
-        return;
+        return <FormExperience 
+          setActiveComponent={setActiveComponent} 
+          setActiveButtonMenu={setActiveButtonMenu} 
+          setExperienceInfo={setEducationInfo}
+          setNameTag={setNameTag}
+        />
       
       default:
         return (<FormPersonalDetails 

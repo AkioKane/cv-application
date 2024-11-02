@@ -1,7 +1,30 @@
 .live-preview {
-  width: 40%;
+  width: 45%;
   height: 90%;
   background-color: white;
+  color: black;
   margin-right: 6em;
-  border-radius: 8px;
+  font-family: 'Times New Roman';
+  padding: 1.5em;
+}
+
+.live-preview > h1 {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.links-live-preview,
+.head-container-live-preview {
+  display: flex;
+  gap: 1.5em;
+}
+
+hr {
+  margin-bottom: 5px !important;
+  margin-top: 5px;
+}
+
+.education-info-live-preview span,
+.experience-info-live-preview span {
+  display: block;
 }

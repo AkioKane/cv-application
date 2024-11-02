@@ -11,6 +11,10 @@ function App() {
   const [nameTag, setNameTag] = useState("Personal Details")
   const [livePreviewVisible, setLivePreviewVisible] = useState(false)
 
+  const [personInfo, setPersonInfo] = useState(null)
+  const [educationInfo, setEducationInfo] = useState(null)
+  const [experienceInfo, setExperienceInfo] = useState(null)
+
   return (
     <>
       <div className="app">
@@ -33,7 +37,7 @@ function App() {
           <div 
             className="content"
             style={{
-              width: livePreviewVisible ? "50%" : "100%"
+              width: livePreviewVisible ? "55%" : "100%"
             }}
           >
             <NameTag 
@@ -44,12 +48,21 @@ function App() {
               setActiveComponent={setActiveComponent} 
               setActiveButtonMenu={setActiveButtonMenu}
               setNameTag={setNameTag}
-              livePreviewVisible={livePreviewVisible}
+              setPersonInfo={setPersonInfo}
+              setEducationInfo={setEducationInfo}
+              setExperienceInfo={setExperienceInfo}
             />
+            <button onClick={(e) => {
+              console.log(personInfo)
+              console.log(educationInfo)
+              console.log(experienceInfo)
+            }}>click</button>
           </div>
           <LivePreview 
             livePreviewVisible={livePreviewVisible}
-            setLivePreviewVisible={setLivePreviewVisible}
+            personInfo={personInfo}
+            educationInfo={educationInfo}
+            experienceInfo={experienceInfo}
           />
         </div>
       </div>

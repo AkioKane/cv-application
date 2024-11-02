@@ -78,4 +78,9 @@
   hr {
     margin-bottom: 2em;
   }
+
+  .content {
+    width: 100%;
+  }
+
 }

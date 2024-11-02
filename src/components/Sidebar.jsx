@@ -1,56 +1,65 @@
-import { useState } from "react"
 import FormPersonalDetails from "./FormPersonalDetails"
 import FormEducation from "./FormEducation"
 import FormExperience from "./FormExperience"
 
-function Sidebar({ activeComponent, setActiveComponent, setActiveButtonMenu, setNameTag, livePreviewVisible }) {
-  const [personInfo, setPersonInfo] = useState(null)
-  const [educationInfo, setEducationInfo] = useState(null)
-  const [experienceInfo, setExperienceInfo] = useState(null)
-
+function Sidebar({
+  activeComponent,
+  setActiveComponent,
+  setActiveButtonMenu,
+  setNameTag,
+  setPersonInfo,
+  setEducationInfo,
+  setExperienceInfo
+}) {
   const renderComponent = () => {
     switch (activeComponent) {
-      case 'personalDetails':
-        return (<FormPersonalDetails 
-          setActiveComponent={setActiveComponent}
-          setActiveButtonMenu={setActiveButtonMenu} 
-          setPersonInfo={setPersonInfo}
-          setNameTag={setNameTag}
-        />)
-      
+      case "personalDetails":
+        return (
+          <FormPersonalDetails
+            setActiveComponent={setActiveComponent}
+            setActiveButtonMenu={setActiveButtonMenu}
+            setPersonInfo={setPersonInfo}
+            setNameTag={setNameTag}
+          />
+        );
+
       case "education":
-        return <FormEducation 
-          setActiveComponent={setActiveComponent} 
-          setActiveButtonMenu={setActiveButtonMenu} 
-          setEducationInfo={setEducationInfo}
-          setNameTag={setNameTag}
-        />
-      
+        return (
+          <FormEducation
+            setActiveComponent={setActiveComponent}
+            setActiveButtonMenu={setActiveButtonMenu}
+            setEducationInfo={setEducationInfo}
+            setNameTag={setNameTag}
+          />
+        );
+
       case "experience":
-        return <FormExperience 
-          setActiveComponent={setActiveComponent} 
-          setActiveButtonMenu={setActiveButtonMenu} 
-          setExperienceInfo={setEducationInfo}
-          setNameTag={setNameTag}
-        />
-      
+        return (
+          <FormExperience
+            setActiveComponent={setActiveComponent}
+            setActiveButtonMenu={setActiveButtonMenu}
+            setExperienceInfo={setExperienceInfo}
+            setNameTag={setNameTag}
+          />
+        );
+
       default:
-        return (<FormPersonalDetails 
-          setActiveComponent={setActiveComponent} 
-          setActiveButtonMenu={setActiveButtonMenu} 
-          setPersonInfo={setPersonInfo}
-          setNameTag={setNameTag}
-        />)
+        return (
+          <FormPersonalDetails
+            setActiveComponent={setActiveComponent}
+            setActiveButtonMenu={setActiveButtonMenu}
+            setPersonInfo={setPersonInfo}
+            setNameTag={setNameTag}
+          />
+        );
     }
-  }
+  };
 
   return (
     <>
-      <div className="sidebar">
-        {renderComponent()}
-      </div>
+      <div className="sidebar">{renderComponent()}</div>
     </>
-  )
+  );
 }
 
 export default Sidebar

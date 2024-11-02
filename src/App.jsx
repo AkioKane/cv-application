@@ -52,11 +52,6 @@ function App() {
               setEducationInfo={setEducationInfo}
               setExperienceInfo={setExperienceInfo}
             />
-            <button onClick={(e) => {
-              console.log(personInfo)
-              console.log(educationInfo)
-              console.log(experienceInfo)
-            }}>click</button>
           </div>
           <LivePreview 
             livePreviewVisible={livePreviewVisible}
